@@ -1,7 +1,8 @@
 'use strict';
 
 var MongoClient = require('mongodb').MongoClient;
-var mongoUrl = 'mongodb://localhost/' + process.env.DBNAME;
+//mongob://192.168.11.232 is current virtual machine ip
+var mongoUrl = 'mongodb://192.168.11.232/' + process.env.DBNAME;
 var initialized = false;
 
 exports.connect = function(req, res, next){
@@ -22,4 +23,3 @@ exports.db = function(fn){
     fn();
   });
 };
-
